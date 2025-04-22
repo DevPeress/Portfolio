@@ -75,8 +75,8 @@ function App() {
             </div>
 
             <div className='flex relative w-full h-auto top-120 md:top-200 lg:top-280 items-center justify-center'>
-              <div className='absolute text-[#FFFFFF] light:text-[#2B2B2B] text-[6vw] lg:text-[3vw]'>O que eu sei</div>
-              <div className='absolute top-4 md:top-6 lg:top-10 text-[3vw] lg:text-[1.2vw] text-transparent bg-clip-text bg-gradient-to-r from-[#4FC3F7] to-[#FFFFFF] light:to-[#484E53]'>Meus conhecimentos!</div>
+              <div className='absolute text-[#FFFFFF] light:text-[#2B2B2B] text-[6vw] lg:text-[3vw]'>Portfólio</div>
+              <div className='absolute top-4 md:top-6 lg:top-10 text-[3vw] lg:text-[1.2vw] text-transparent bg-clip-text bg-gradient-to-r from-[#4FC3F7] to-[#FFFFFF] light:to-[#484E53]'>Sistemas que Utilizo!</div>
               <img className='absolute top-15 md:top-30 lg:top-40' src={white ? exp3 : exp1} alt="" />
               <img className='absolute top-60 md:top-95 lg:top-120' src={white ? exp4 : exp2} alt="" />
             </div>
