@@ -3,7 +3,7 @@ import peres from './assets/Peres.svg'
 import noite from './assets/Noite.svg'
 import dia from './assets/Dia.svg'
 import fundo from './assets/Fundo.svg'
-import pessoa from './assets/Pessoa.svg'
+import pessoa from './assets/Eu.jpg'
 import peres2 from './assets/Peres2.svg'
 import exp1 from './assets/Exp1.svg'
 import exp2 from './assets/Exp2.svg'
@@ -20,7 +20,7 @@ import insta from './assets/Insta.svg'
 import linkedin2 from './assets/Linkedin2.svg'
 import site2 from './assets/Site2.svg'
 import insta2 from './assets/Insta2.svg'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 function App() {
   const openInNewTab = (url: string) => {
@@ -31,6 +31,13 @@ function App() {
     navigator.clipboard.writeText('fabricioperesdsantos@gmail.com');
   };
 
+  const inicio = useRef(null)
+  const sobre = useRef(null)
+  const projetos = useRef(null)
+  const scrollToSection = (sectionRef: any) => {
+    sectionRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   const [white, setWhite] = useState(false)
 
   const theme = () => setWhite(!white)
@@ -38,16 +45,16 @@ function App() {
   return (
     <>
     <div className={white ? 'light' : 'dark'}>
-        <div className='absolute bg-[#1A1A1A] light:bg-[#E0E8F6] w-screen h-screen top-0 bottom-0 lef-0 right-0 m-auto overflow-x-hidden overflow-y-auto'>
-          <header className='flex relative w-full h-15 top-10'>
+        <div className='absolute bg-[#1A1A1A] light:bg-[#E0E8F6] w-screen h-screen top-0 bottom-0 lef-0 right-0 m-auto overflow-x-hidden overflow-y-auto' >
+          <header className='flex fixed w-full h-15 top-10'>
             <div className='flex absolute w-[80%] md:w-[60%] left-[5%] md:left-[10%] h-15 items-center justify-between text-[#C1C1C1] light:text-[#050505]'>
               {white ? <><img className='w-10 md:w-15 lg:w-20' src={peres2} alt="" /></> : <><img className='w-10 md:w-15 lg:w-20' src={peres} alt="" /></>}
               <div className='flex relative w-1/2 md:w-1/2 lg:w-1/3 items-center justify-between text-base'>
-                <div className='text-xs md:text-base lg:text-lg hover:scale-105'>Ínicio</div>
-                <div className='text-xs md:text-base lg:text-lg hover:scale-105'>Sobre Mim</div>
-                <div className='text-xs md:text-base lg:text-lg hover:scale-105'>Projetos</div>
+                <div className='text-xs md:text-base lg:text-lg hover:scale-105' onClick={() => scrollToSection(inicio)}>Ínicio</div>
+                <div className='text-xs md:text-base lg:text-lg hover:scale-105' onClick={() => scrollToSection(sobre)}>Sobre Mim</div>
+                <div className='text-xs md:text-base lg:text-lg hover:scale-105' onClick={() => scrollToSection(projetos)}>Projetos</div>
               </div>
-              <div className='flex relative w-15 md:w-30 lg:w-30 h-5 md:h-10 lg:h-10 text-[2vw] md:text-xs lg:text-lg  border-1 border-[#4FC3F7] light:border-[#050505] rounded-md items-center justify-center text-[#FFFFFF] light:text-[#050505] hover:scale-105'>Contato</div>
+              <div className='flex relative w-15 md:w-30 lg:w-30 h-5 md:h-10 lg:h-10 text-[2vw] md:text-xs lg:text-lg  border-1 border-[#4FC3F7] light:border-[#050505] rounded-md items-center justify-center text-[#FFFFFF] light:text-[#050505] hover:scale-105' onClick={() => openInNewTab("https://www.linkedin.com/in/devperes")}>Contato</div>
             </div>
             {white ? 
               <><img onClick={theme} className='relative left-[90%] md:left-[80%] w-5 md:w-10 lg:w-10 hover:scale-105' src={dia} alt="" /></> 
@@ -56,16 +63,18 @@ function App() {
             }
           </header>
 
+          <div ref={inicio}></div>
+          
           <main>
-            <div className='flex relative w-full h-auto top-90 items-center justify-center'>
+            <div className='flex relative w-full h-auto top-100 lg:top-120 items-center justify-center'>
               {white ? <></>:<><img className='absolute bottom-35 md:bottom-37 lg:top-[-150%] w-auto md:w-[50%] lg:w-auto' src={fundo} alt="" /></>}
-              <img className='relative bottom-65 md:bottom-50 lg:bottom-50 w-30 md:w-50 lg:w-50' src={pessoa} alt="" />
+              <img className='relative bottom-65 md:bottom-50 lg:bottom-50 w-30 md:w-50 lg:w-50 rounded-full' src={pessoa} alt="" />
               <div className='absolute bottom-55 md:bottom-30 lg:bottom-30 text-[#FFFFFF] text-[6vw] lg:text-[3vw] light:text-[#484E53]'>Fabrício Peres</div>
               <div className='absolute bottom-52 md:bottom-24 lg:bottom-25 text-[3vw] lg:text-[1.2vw] text-transparent bg-clip-text bg-gradient-to-r from-[#4FC3F7] to-[#FFFFFF] light:to-[#484E53]'>Estudante Full-Stack <span className='text-[#FFFFFF]'>🧙‍♂️</span></div>
               <h2 className='absolute w-[90vw] md:w-[50vw] lg:w-[35vw] text-white bottom-30 md:top-35 text-xs md:text-base lg:text-lg light:text-[#484E53]'>Sou um Estudante de Desenvolvedor Full-Stack. Atualmente estudo React (JS e TS) e posteriormente irei me aprofundar em Next. Utilizo NodeJS (Express) para a criação de códigos back-end e criação de APIs</h2>
             </div>
 
-            <div className='flex relative w-full h-auto top-40 md:top-100 lg:top-140 items-center justify-center'>
+            <div className='flex relative w-full h-auto top-40 md:top-100 lg:top-150 items-center justify-center' ref={sobre}>
               <div className='absolute md:top-25 lg:top-25 text-[#FFFFFF] light:text-[#2B2B2B] text-[6vw] lg:text-[3vw]'>Sobre Mim</div>
               <div className='absolute top-42 lg:top-47 text-[3vw] lg:text-[1.2vw] text-transparent bg-clip-text bg-gradient-to-r from-[#4FC3F7] to-[#FFFFFF] light:to-[#484E53]'>Conheça-me</div>
               <h2 className='relative top-55 md:top-55 lg:top-60 text-white w-[90%] lg:w-[50%] text-xs lg:text-lg light:text-[#1C1E53] '>Me chamo Fabrício Peres e atualmente estou estudando Ciências da Computação pela Universidade São Judas Tadeu, que irei finalizar ao fim deste ano.
@@ -81,7 +90,7 @@ function App() {
               <img className='absolute top-60 md:top-95 lg:top-120' src={white ? exp4 : exp2} alt="" />
             </div>
 
-            <div className='flex relative w-full h-auto top-220 md:top-400 lg:top-500 items-center justify-center'>
+            <div className='flex relative w-full h-auto top-220 md:top-400 lg:top-500 items-center justify-center' ref={projetos}>
               <div className='absolute bottom-85 text-[#FFFFFF] light:text-[#2B2B2B] text-[6vw] lg:text-[3vw]'>Projetos</div>
               <div className='absolute top-15 text-[3vw] lg:text-[1.2vw] text-transparent bg-clip-text bg-gradient-to-r from-[#4FC3F7] to-[#FFFFFF] light:to-[#484E53]'>Alguns dos meus Projetos!</div>
               <div className='relative h-100 w-300 top-30 items-center justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4'>
