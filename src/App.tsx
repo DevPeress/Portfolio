@@ -46,7 +46,7 @@ function App() {
     <>
     <div className={white ? 'light' : 'dark'}>
         <div className='absolute bg-[#1A1A1A] light:bg-[#E0E8F6] w-screen h-screen top-0 bottom-0 lef-0 right-0 m-auto overflow-x-hidden overflow-y-auto' >
-          <header className='flex fixed w-full h-15 top-10'>
+          <header className='flex fixed w-full h-15 top-10 z-1'>
             <div className='flex absolute w-[80%] md:w-[60%] left-[5%] md:left-[10%] h-15 items-center justify-between text-[#C1C1C1] light:text-[#050505]'>
               {white ? <><img className='w-10 md:w-15 lg:w-20' src={peres2} alt="" /></> : <><img className='w-10 md:w-15 lg:w-20' src={peres} alt="" /></>}
               <div className='flex relative w-1/2 md:w-1/2 lg:w-1/3 items-center justify-between text-base'>
