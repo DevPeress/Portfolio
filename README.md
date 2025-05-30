@@ -4,7 +4,7 @@
 Este repositório contém meu portfólio pessoal, onde compartilho minha trajetória, habilidades e projetos desenvolvidos na área de desenvolvimento.  
 O objetivo é apresentar meu progresso, aprendizados e conquistas como desenvolvedor.
 
-🔗 Acesse o portfólio online: [portfolio-peres-projects-d8e1f227.vercel.app](https://portfolio-peres-projects-d8e1f227.vercel.app)
+🔗 Acesse o portfólio online: [https://portfolio-peres-seven.vercel.app]([https://portfolio-peres-projects-d8e1f227.vercel.app](https://portfolio-peres-seven.vercel.app))
 
 ## ✨ Sobre o Projeto
 
@@ -51,8 +51,8 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 
 Para sugestões, feedbacks ou oportunidades de colaboração, entre em contato:
 
-- Email: [seu.email@exemplo.com](mailto:seu.email@exemplo.com)
-- LinkedIn: [linkedin.com/in/seu-perfil](https://www.linkedin.com/in/seu-perfil)
+- Email: [fabricioperesdsantos@gmail.com](mailto:fabricioperesdsantos@gmail.com)
+- LinkedIn: [www.linkedin.com/in/devperes](www.linkedin.com/in/devperes)
 
 ---
 
