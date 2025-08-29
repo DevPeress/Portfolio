@@ -18,10 +18,9 @@ O portfólio foi desenvolvido com foco na simplicidade e clareza, destacando:
 
 O projeto foi construído utilizando as seguintes tecnologias:
 
-- HTML5 e CSS3
+- React
 - JavaScript
-- Frameworks e bibliotecas relevantes (especificar, se aplicável)
-- Ferramentas de build e empacotamento (especificar, se aplicável)
+- TailWind
 
 ## 🚀 Como Executar o Projeto Localmente
 

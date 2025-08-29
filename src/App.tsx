@@ -23,8 +23,10 @@ import insta2 from './assets/Insta2.svg'
 import { useRef, useState } from 'react'
 
 function App() {
+  const [white, setWhite] = useState(false)
+  const theme = () => setWhite(!white)
   const openInNewTab = (url: string) => {
-    window.open(url, "_blank", "noreferrer");
+    return window.open(url, "_blank", "noreferrer");
   };
 
   const copiar = () => {
@@ -37,10 +39,6 @@ function App() {
   const scrollToSection = (sectionRef: any) => {
     sectionRef.current.scrollIntoView({ behavior: "smooth" });
   };
-
-  const [white, setWhite] = useState(false)
-
-  const theme = () => setWhite(!white)
 
   return (
     <>
