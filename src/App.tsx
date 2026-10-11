@@ -58,13 +58,13 @@ function App() {
           <div className="hero-copy">
             <p className="eyebrow">PORTFÓLIO · DESENVOLVIMENTO</p>
             <h1>Fabrício <span>Peres</span></h1>
-            <p className="hero-role">Estudante Full-Stack <span aria-hidden="true">✦</span></p>
-            <p className="hero-description">Sou estudante de desenvolvimento Full-Stack. Atualmente estudo React (JS e TS) e pretendo me aprofundar em Next.js. Utilizo Node.js (Express) para criar back-ends e APIs.</p>
+            <p className="hero-role">Engenheiro de Software <span aria-hidden="true">✦</span></p>
+            <p className="hero-description">Sou desenvolvedor de software, com foco em interfaces modernas e soluções robustas. Atualmente trabalho com React (JavaScript e TypeScript) e .NET para criar aplicações web e APIs.</p>
             <a className="primary-link" href="#projetos">Ver projetos <span aria-hidden="true">↘</span></a>
           </div>
           <div className="portrait-wrap">
             <div className="portrait-ring"><img className="portrait" src={pessoa} alt="Fabrício Peres" /></div>
-            <span className="portrait-caption">São Paulo, Brasil</span>
+            <span className="portrait-caption">Osasco, São Paulo, Brasil</span>
           </div>
           <span className="hero-index" aria-hidden="true">01 / 04</span>
         </section>
@@ -75,9 +75,9 @@ function App() {
             <h2>Aprender.<br /><span>Construir.</span></h2>
           </div>
           <div className="about-copy">
-            <p>Me chamo Fabrício Peres e atualmente estudo Ciências da Computação na Universidade São Judas Tadeu.</p>
-            <p>Minha jornada com programação começou em 2021, estudando Lua para o FiveM. Em 2023, comecei a criar interfaces web e para FiveM. Aprendi HTML, CSS e JavaScript e, há cerca de um ano, uso React para desenvolver interfaces mais interativas e com melhor desempenho.</p>
-            <p>Também utilizo Node.js, especialmente Express.js, para criar back-ends e APIs. Nos projetos de estudo, já trabalhei com operações em MySQL e sistemas de cadastro e login, usando bcrypt para proteger senhas.</p>
+            <p>Meu nome é Fabrício Peres, e sou estudante de Ciências da Computação na Universidade São Judas Tadeu.</p>
+            <p>Minha jornada na programação começou em 2021, quando comecei a explorar Lua para desenvolvimento em FiveM. Em 2023, passei a criar interfaces web e também experiências para FiveM, aprendendo HTML, CSS e JavaScript. Desde então, venho evoluindo com foco em React, criando interfaces mais interativas, performáticas e com melhor experiência de usuário.</p>
+            <p>Além disso, desenvolvo soluções com Node.js e .NET, criando APIs e back-end para projetos pessoais e estudos, com atenção para arquitetura, organização e qualidade de código.</p>
           </div>
         </section>
 
