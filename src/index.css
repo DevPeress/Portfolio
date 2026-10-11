@@ -1,43 +1,53 @@
 @import "tailwindcss";
 
-@custom-variant light (&:where(.light, .light *));
-
-* {
-  @apply transition-colors duration-100
-}
-
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  user-select: none;
+  font-weight: 400;
+  line-height: 1.5;
+  color-scheme: dark light;
+  scroll-behavior: smooth;
 }
 
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 9px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1A1A1A;
+  background: #111b1c;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #555;
-  border-radius: 4px;
+  border: 2px solid #111b1c;
+  border-radius: 5px;
+  background: #71817b;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #888;
+  background: #a8b5b1;
 }
