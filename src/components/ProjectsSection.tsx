@@ -8,26 +8,35 @@ export function ProjectsSection() {
     {
       title: 'Skillz',
       number: '01',
+      category: 'Full stack',
       image: skillz,
       alt: 'Prévia do projeto Skillz',
       href: 'https://github.com/xPeres/Sistema-de-Divulga-o-de-Empresas',
-      description: 'Pequeno site com front-end e back-end para registro de serviços.'
+      description:
+        'Plataforma para divulgar serviços locais, conectando clientes e prestadores em um fluxo simples de cadastro e busca.',
+      tags: ['React', 'Node.js', 'UI']
     },
     {
       title: 'Inventário',
       number: '02',
+      category: 'Dashboard',
       image: inv,
       alt: 'Prévia do sistema de inventário',
       href: 'https://youtu.be/F0nvAkWIkDY',
-      description: 'Sistema de inventário para FiveM com interface drag-and-drop.'
+      description:
+        'Sistema de gestão para ambiente FiveM com organização visual, movimentação de itens e interface drag-and-drop.',
+      tags: ['UI/UX', 'Gestão', 'FiveM']
     },
     {
       title: 'Calculadora',
       number: '03',
+      category: 'Ferramenta',
       image: cal,
       alt: 'Prévia do projeto Calculadora',
       href: 'https://github.com/xPeres/Calculadora',
-      description: 'Calculadora simples com alternância entre temas de cores.'
+      description:
+        'Calculadora funcional com foco em usabilidade e personalização visual, incluindo alternância entre temas.',
+      tags: ['JavaScript', 'Design', 'UX']
     }
   ]
 
@@ -40,11 +49,15 @@ export function ProjectsSection() {
             Projetos <span>em destaque</span>
           </h2>
         </div>
-        <p className="section-note">Experimentos e sistemas desenvolvidos durante meu aprendizado.</p>
+        <p className="section-note">Experimentos, interfaces e soluções práticas desenvolvidas ao longo da minha trajetória.</p>
       </div>
       <div className="project-grid">
         {projects.map((project) => (
           <article className="project-card" key={project.title}>
+            <div className="project-header">
+              <span className="project-category">{project.category}</span>
+              <span className="project-number">{project.number}</span>
+            </div>
             <a
               className="project-image"
               href={project.href}
@@ -59,9 +72,13 @@ export function ProjectsSection() {
             </a>
             <div className="project-meta">
               <h3>{project.title}</h3>
-              <span>{project.number}</span>
             </div>
             <p>{project.description}</p>
+            <ul className="project-tags" aria-label={`Tecnologias do projeto ${project.title}`}>
+              {project.tags.map((tag) => (
+                <li key={tag}>{tag}</li>
+              ))}
+            </ul>
           </article>
         ))}
       </div>
