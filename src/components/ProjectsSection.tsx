@@ -6,37 +6,48 @@ import acess from '../assets/send.svg'
 export function ProjectsSection() {
   const projects = [
     {
-      title: 'Skillz',
+      title: 'Site de Gerenciamento de Vendas',
       number: '01',
       category: 'Full stack',
       image: skillz,
-      alt: 'Prévia do projeto Skillz',
-      href: 'https://github.com/xPeres/Sistema-de-Divulga-o-de-Empresas',
+      alt: 'Prévia do projeto de gerenciamento de vendas',
+      href: 'https://github.com/DevPeress/Site-de-Gerenciamento-de-Vendas',
       description:
-        'Plataforma para divulgar serviços locais, conectando clientes e prestadores em um fluxo simples de cadastro e busca.',
-      tags: ['React', 'Node.js', 'UI']
+        'Sistema completo para gestão de vendas com autenticação segura, painel administrativo e integração com banco de dados relacional.',
+      tags: ['Next.js', 'TypeScript', 'Tailwind', 'Prisma', 'MySQL']
     },
     {
-      title: 'Inventário',
+      title: 'Back-End E-Commerce Básico',
       number: '02',
-      category: 'Dashboard',
+      category: 'API & Segurança',
       image: inv,
-      alt: 'Prévia do sistema de inventário',
-      href: 'https://youtu.be/F0nvAkWIkDY',
+      alt: 'Prévia do back-end de e-commerce',
+      href: 'https://github.com/DevPeress/E-Commerce',
       description:
-        'Sistema de gestão para ambiente FiveM com organização visual, movimentação de itens e interface drag-and-drop.',
-      tags: ['UI/UX', 'Gestão', 'FiveM']
+        'API de e-commerce em Node.js com autenticação JWT, criptografia de senhas, proteção contra abuso e testes automatizados.',
+      tags: ['Node.js', 'Express', 'JWT', 'Bcrypt', 'Jest']
     },
     {
-      title: 'Calculadora',
+      title: 'API EduConnect',
       number: '03',
-      category: 'Ferramenta',
+      category: 'Backend',
       image: cal,
-      alt: 'Prévia do projeto Calculadora',
-      href: 'https://github.com/xPeres/Calculadora',
+      alt: 'Prévia da API EduConnect',
+      href: 'https://github.com/DevPeress/EduConnect-API',
       description:
-        'Calculadora funcional com foco em usabilidade e personalização visual, incluindo alternância entre temas.',
-      tags: ['JavaScript', 'Design', 'UX']
+        'API REST para gestão escolar desenvolvida em C# e .NET, com autenticação JWT e integração com SQL Server.',
+      tags: ['C#', '.NET', 'JWT', 'SQL Server', 'EF Core']
+    },
+    {
+      title: 'Front-end EduConnect',
+      number: '04',
+      category: 'UI & UX',
+      image: skillz,
+      alt: 'Prévia do front-end EduConnect',
+      href: 'https://github.com/DevPeress/EduConnect-Web',
+      description:
+        'Aplicação web escolar com dashboard, calendário, notificações e fluxo moderno de navegação com React e Tailwind.',
+      tags: ['React', 'TypeScript', 'Tailwind', 'Axios', 'Zod']
     }
   ]
 
