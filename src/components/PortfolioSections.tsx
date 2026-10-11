@@ -1,0 +1,6 @@
+export { Header } from './Header'
+export { HeroSection } from './HeroSection'
+export { AboutSection } from './AboutSection'
+export { StackSection } from './StackSection'
+export { ProjectsSection } from './ProjectsSection'
+export { Footer } from './Footer'
