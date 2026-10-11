@@ -445,45 +445,73 @@
 
 .project-card {
   min-width: 0;
+  padding: 18px 18px 20px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0)),
+    var(--surface-raised);
+  transition: transform 180ms ease, border-color 180ms ease;
 }
 
-.project-image {
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.project-category,
+.project-number {
+  color: var(--muted);
+  font-size: 0.69rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.project-number {
+  color: var(--accent);
+}
+
+.project-visual {
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   aspect-ratio: 1.38;
   overflow: hidden;
   border: 1px solid var(--line);
-  background: var(--surface-raised);
+  background:
+    radial-gradient(circle at top right, color-mix(in srgb, var(--accent) 18%, transparent), transparent 32%),
+    linear-gradient(135deg, var(--surface-raised), rgba(255, 255, 255, 0.02));
+  transition: transform 220ms ease, border-color 180ms ease;
 }
 
-.project-image > img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 220ms ease;
+.project-visual:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 65%, var(--line));
 }
 
-.project-image:hover > img {
-  transform: scale(1.035);
-}
-
-.project-image > span {
-  position: absolute;
-  right: 12px;
-  bottom: 12px;
-  display: grid;
-  width: 42px;
-  height: 42px;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--accent-strong);
-}
-
-.project-image > span img {
-  width: 19px;
-  height: 19px;
-  object-fit: contain;
+.project-visual-label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(12, 12, 12, 0.42);
+  color: var(--text);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
 }
 
 .project-meta {
@@ -501,17 +529,79 @@
   font-weight: 500;
 }
 
-.project-meta span {
-  color: var(--accent);
-  font-size: 0.73rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-}
-
 .project-card > p {
   margin: 8px 0 0;
   font-size: 0.88rem;
-  line-height: 1.65;
+  line-height: 1.7;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-tags li {
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.02);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.project-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.project-page-numbers {
+  display: flex;
+  gap: 8px;
+}
+
+.project-page-button,
+.project-page-number {
+  display: inline-flex;
+  min-width: 42px;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  color: var(--text);
+  background: var(--surface-raised);
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: border-color 160ms ease, color 160ms ease, opacity 160ms ease;
+}
+
+.project-page-button {
+  padding-inline: 14px;
+}
+
+.project-page-button:hover:not(:disabled),
+.project-page-number:hover {
+  border-color: var(--accent);
+}
+
+.project-page-number[aria-current='page'] {
+  border-color: var(--accent);
+  color: var(--surface);
+  background: var(--accent);
+}
+
+.project-page-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 
 .site-footer {
@@ -868,8 +958,18 @@ button:focus-visible {
     margin-top: 34px;
   }
 
-  .project-image {
+  .project-visual {
     aspect-ratio: 1.48;
+  }
+
+  .project-pagination {
+    gap: 8px;
+    margin-top: 28px;
+  }
+
+  .project-page-button {
+    padding-inline: 10px;
+    font-size: 0.75rem;
   }
 
   .footer-main {

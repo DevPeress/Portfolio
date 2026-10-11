@@ -1,35 +1,51 @@
-import skillz from '../assets/Skillz.svg'
-import inv from '../assets/Inventario.svg'
-import cal from '../assets/Calculadora.svg'
-import acess from '../assets/send.svg'
+import { useState } from 'react'
 
 export function ProjectsSection() {
   const projects = [
     {
-      title: 'Skillz',
+      title: 'Site de Gerenciamento de Vendas',
       number: '01',
-      image: skillz,
-      alt: 'Prévia do projeto Skillz',
-      href: 'https://github.com/xPeres/Sistema-de-Divulga-o-de-Empresas',
-      description: 'Pequeno site com front-end e back-end para registro de serviços.'
+      category: 'Full stack',
+      href: 'https://github.com/DevPeress/Site-de-Gerenciamento-de-Vendas',
+      description:
+        'Sistema completo para gestão de vendas com autenticação segura, painel administrativo e integração com banco de dados relacional.',
+      tags: ['Next.js', 'TypeScript', 'Tailwind', 'Prisma', 'MySQL']
     },
     {
-      title: 'Inventário',
+      title: 'Back-End E-Commerce Básico',
       number: '02',
-      image: inv,
-      alt: 'Prévia do sistema de inventário',
-      href: 'https://youtu.be/F0nvAkWIkDY',
-      description: 'Sistema de inventário para FiveM com interface drag-and-drop.'
+      category: 'API & Segurança',
+      href: 'https://github.com/DevPeress/E-Commerce',
+      description:
+        'API de e-commerce em Node.js com autenticação JWT, criptografia de senhas, proteção contra abuso e testes automatizados.',
+      tags: ['Node.js', 'Express', 'JWT', 'Bcrypt', 'Jest']
     },
     {
-      title: 'Calculadora',
+      title: 'API EduConnect',
       number: '03',
-      image: cal,
-      alt: 'Prévia do projeto Calculadora',
-      href: 'https://github.com/xPeres/Calculadora',
-      description: 'Calculadora simples com alternância entre temas de cores.'
+      category: 'Backend',
+      href: 'https://github.com/DevPeress/EduConnect-API',
+      description:
+        'API REST para gestão escolar desenvolvida em C# e .NET, com autenticação JWT e integração com SQL Server.',
+      tags: ['C#', '.NET', 'JWT', 'SQL Server', 'EF Core']
+    },
+    {
+      title: 'Front-end EduConnect',
+      number: '04',
+      category: 'UI & UX',
+      href: 'https://github.com/DevPeress/EduConnect-Web',
+      description:
+        'Aplicação web escolar com dashboard, calendário, notificações e fluxo moderno de navegação com React e Tailwind.',
+      tags: ['React', 'TypeScript', 'Tailwind', 'Axios', 'Zod']
     }
   ]
+  const projectsPerPage = 3
+  const [currentPage, setCurrentPage] = useState(0)
+  const pageCount = Math.ceil(projects.length / projectsPerPage)
+  const visibleProjects = projects.slice(
+    currentPage * projectsPerPage,
+    (currentPage + 1) * projectsPerPage
+  )
 
   return (
     <section className="projects section-wrap" id="projetos">
@@ -40,31 +56,70 @@ export function ProjectsSection() {
             Projetos <span>em destaque</span>
           </h2>
         </div>
-        <p className="section-note">Experimentos e sistemas desenvolvidos durante meu aprendizado.</p>
+        <p className="section-note">Experimentos, interfaces e soluções práticas desenvolvidas ao longo da minha trajetória.</p>
       </div>
       <div className="project-grid">
-        {projects.map((project) => (
+        {visibleProjects.map((project) => (
           <article className="project-card" key={project.title}>
+            <div className="project-header">
+              <span className="project-category">{project.category}</span>
+              <span className="project-number">{project.number}</span>
+            </div>
             <a
-              className="project-image"
+              className="project-visual"
               href={project.href}
               target="_blank"
               rel="noreferrer"
               aria-label={`Ver projeto ${project.title}`}
             >
-              <img src={project.image} alt={project.alt} />
-              <span>
-                <img src={acess} alt="" />
-              </span>
+              <span className="project-visual-label">Ver projeto</span>
             </a>
             <div className="project-meta">
               <h3>{project.title}</h3>
-              <span>{project.number}</span>
             </div>
             <p>{project.description}</p>
+            <ul className="project-tags" aria-label={`Tecnologias do projeto ${project.title}`}>
+              {project.tags.map((tag) => (
+                <li key={tag}>{tag}</li>
+              ))}
+            </ul>
           </article>
         ))}
       </div>
+      {pageCount > 1 && (
+        <nav className="project-pagination" aria-label="Paginação dos projetos">
+          <button
+            className="project-page-button"
+            type="button"
+            onClick={() => setCurrentPage((page) => page - 1)}
+            disabled={currentPage === 0}
+          >
+            Anterior
+          </button>
+          <div className="project-page-numbers" aria-label="Páginas">
+            {Array.from({ length: pageCount }, (_, index) => (
+              <button
+                className="project-page-number"
+                type="button"
+                key={index}
+                onClick={() => setCurrentPage(index)}
+                aria-label={`Página ${index + 1}`}
+                aria-current={currentPage === index ? 'page' : undefined}
+              >
+                {index + 1}
+              </button>
+            ))}
+          </div>
+          <button
+            className="project-page-button"
+            type="button"
+            onClick={() => setCurrentPage((page) => page + 1)}
+            disabled={currentPage === pageCount - 1}
+          >
+            Próximo
+          </button>
+        </nav>
+      )}
     </section>
   )
 }
