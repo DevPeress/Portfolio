@@ -9,7 +9,7 @@ export function AboutSection() {
         </h2>
       </div>
       <div className="about-copy">
-        <p>Meu nome é Fabrício Peres, e sou estudante de Ciências da Computação na Universidade São Judas Tadeu.</p>
+        <p>Meu nome é Fabrício Peres, e sou formado em Ciências da Computação na Universidade São Judas Tadeu.</p>
         <p>
           Minha jornada na programação começou em 2021, quando comecei a explorar Lua para desenvolvimento em FiveM. Em 2023,
           passei a criar interfaces web e também experiências para FiveM, aprendendo HTML, CSS e JavaScript. Desde então,
