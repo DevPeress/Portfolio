@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 export function ProjectsSection() {
   const projects = [
     {
@@ -37,6 +39,13 @@ export function ProjectsSection() {
       tags: ['React', 'TypeScript', 'Tailwind', 'Axios', 'Zod']
     }
   ]
+  const projectsPerPage = 3
+  const [currentPage, setCurrentPage] = useState(0)
+  const pageCount = Math.ceil(projects.length / projectsPerPage)
+  const visibleProjects = projects.slice(
+    currentPage * projectsPerPage,
+    (currentPage + 1) * projectsPerPage
+  )
 
   return (
     <section className="projects section-wrap" id="projetos">
@@ -50,7 +59,7 @@ export function ProjectsSection() {
         <p className="section-note">Experimentos, interfaces e soluções práticas desenvolvidas ao longo da minha trajetória.</p>
       </div>
       <div className="project-grid">
-        {projects.map((project) => (
+        {visibleProjects.map((project) => (
           <article className="project-card" key={project.title}>
             <div className="project-header">
               <span className="project-category">{project.category}</span>
@@ -77,6 +86,40 @@ export function ProjectsSection() {
           </article>
         ))}
       </div>
+      {pageCount > 1 && (
+        <nav className="project-pagination" aria-label="Paginação dos projetos">
+          <button
+            className="project-page-button"
+            type="button"
+            onClick={() => setCurrentPage((page) => page - 1)}
+            disabled={currentPage === 0}
+          >
+            Anterior
+          </button>
+          <div className="project-page-numbers" aria-label="Páginas">
+            {Array.from({ length: pageCount }, (_, index) => (
+              <button
+                className="project-page-number"
+                type="button"
+                key={index}
+                onClick={() => setCurrentPage(index)}
+                aria-label={`Página ${index + 1}`}
+                aria-current={currentPage === index ? 'page' : undefined}
+              >
+                {index + 1}
+              </button>
+            ))}
+          </div>
+          <button
+            className="project-page-button"
+            type="button"
+            onClick={() => setCurrentPage((page) => page + 1)}
+            disabled={currentPage === pageCount - 1}
+          >
+            Próximo
+          </button>
+        </nav>
+      )}
     </section>
   )
 }
