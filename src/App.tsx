@@ -25,7 +25,7 @@ function App() {
       <main>
         <HeroSection white={white} />
         <AboutSection />
-        <StackSection white={white} />
+        <StackSection />
         <ProjectsSection />
       </main>
 
